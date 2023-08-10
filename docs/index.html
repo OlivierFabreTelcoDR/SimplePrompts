@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Chat with Claude</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      background-color: #512DA8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
   <label for="input">Enter text:</label>
   <input type="text" id="input">
-
   <button onclick="chat('How may I help?')">Help</button>
   <button onclick="chat('Tell me more about...')">Learn More</button>
   <button onclick="chat('In your opinion...')">Opinion</button>
@@ -29,4 +45,5 @@
   </script>
 
 </body>
+
 </html>
