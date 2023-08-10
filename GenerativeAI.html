@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat with Claude</title>
+</head>
+
+<body>
+
+  <label for="input">Enter text:</label>
+  <input type="text" id="input">
+
+  <button onclick="chat('How may I help?')">Help</button>
+  <button onclick="chat('Tell me more about...')">Learn More</button>
+  <button onclick="chat('In your opinion...')">Opinion</button>
+
+  <div id="response"></div>
+
+  <script>
+
+    async function chat(context) {
+      var input = document.getElementById('input').value;
+
+      const response = await fetch('https://www.anthropic.com/api/chat?question=' + encodeURIComponent(context + " " + input));
+      const data = await response.json();
+
+      document.getElementById('response').innerHTML = data.answer;
+    }
+
+  </script>
+
+</body>
+</html>
